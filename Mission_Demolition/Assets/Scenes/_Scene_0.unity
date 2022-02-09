@@ -214,6 +214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503893962}
   - component: {fileID: 503893963}
+  - component: {fileID: 503893964}
   m_Layer: 0
   m_Name: Slingshot
   m_TagString: Untagged
@@ -235,6 +236,7 @@ Transform:
   - {fileID: 1285092331}
   - {fileID: 622799740}
   - {fileID: 387563588}
+  - {fileID: 751182217}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -15, z: 0}
@@ -251,6 +253,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3
   m_Center: {x: 0, y: 4, z: 0}
+--- !u!114 &503893964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503893961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c1603086d39e94f817617720918e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabProjectile: {fileID: 1317094081476045038, guid: cd90e9e50a4fb1d439e22177cb774eee, type: 3}
+  velocityMultiplier: 8
+  launchPoint: {fileID: 0}
+  LaunchPos: {x: 0, y: 0, z: 0}
+  projectile: {fileID: 0}
+  projectileRB: {fileID: 0}
+  aimingMode: 0
 --- !u!1 &622799739
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +353,69 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 622799739}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &751182216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751182217}
+  - component: {fileID: 751182218}
+  - component: {fileID: 751182219}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751182217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751182216}
+  m_LocalRotation: {x: -0, y: 0.13052624, z: -0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 503893962}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!122 &751182218
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751182216}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286611584
+  m_Size: 3
+--- !u!114 &751182219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751182216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c1603086d39e94f817617720918e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabProjectile: {fileID: 0}
+  velocityMultiplier: 8
+  launchPoint: {fileID: 0}
+  LaunchPos: {x: 0, y: 0, z: 0}
+  projectile: {fileID: 0}
+  projectileRB: {fileID: 0}
+  aimingMode: 0
 --- !u!1 &1146091992
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +427,7 @@ GameObject:
   - component: {fileID: 1146091995}
   - component: {fileID: 1146091994}
   - component: {fileID: 1146091993}
+  - component: {fileID: 1146091996}
   m_Layer: 0
   m_Name: _MainCamera
   m_TagString: MainCamera
@@ -415,6 +500,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1146091996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146091992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18dc808dd11d8d145a06032c5ed24e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camZ: 0
 --- !u!1 &1216687850
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +603,7 @@ Transform:
   m_GameObject: {fileID: 1216687850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -10, z: 0}
-  m_LocalScale: {x: 100, y: 1, z: 4}
+  m_LocalScale: {x: 400, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
