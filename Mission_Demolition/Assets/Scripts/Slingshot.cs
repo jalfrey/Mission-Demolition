@@ -12,6 +12,8 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour
 {
+    static private Slingshot S; 
+
 
     [Header("Set in Inspector")]
     public GameObject prefabProjectile;
@@ -21,12 +23,19 @@ public class Slingshot : MonoBehaviour
     public GameObject launchPoint;
     public Vector3 LaunchPos;
     public GameObject projectile;
-    public Rigidbody projectileRB;
     public bool aimingMode;
-
+    public Rigidbody projectileRB;
+    
+    static public Vector3 LAUNCH_POS
+    {
+        get { if (S == null) return Vector3.zero;
+            return S.LaunchPos;
+        } 
+    }
 
     private void Awake()
     {
+        S = this;
         Transform launchPointTrans = transform.Find("LaunchPoint");
         
         launchPoint = launchPointTrans.gameObject;
