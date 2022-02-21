@@ -84,7 +84,8 @@ public class Slingshot : MonoBehaviour
         {
             aimingMode = false;
 
-            // need to assign variable 
+            // need to assign variable /// 
+
             projectileRB.isKinematic = false;
             projectileRB.velocity = -mouseDelta * velocityMultiplier;
 

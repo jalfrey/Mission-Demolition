@@ -39,7 +39,7 @@ public class ProjectileLine : MonoBehaviour
             {
                 line.enabled = false;
                 points = new List<Vector3>();
-                AddPoint();
+                AddPoints();
             }
         }
     }
@@ -63,7 +63,7 @@ public class ProjectileLine : MonoBehaviour
 
         if(points.Count == 0)
         {
-            Vector3 launchPosDiff = pt - Slingshot.Launch_Pos;
+            Vector3 launchPosDiff = pt - Slingshot.LAUNCH_POS;
             points.Add(pt + launchPosDiff);
             points.Add(pt);
             line.positionCount = 2;
